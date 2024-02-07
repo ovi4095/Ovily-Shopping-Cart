@@ -15,6 +15,8 @@ body{
     flex-direction: column;
     
 }
+
+/* Typography */
 h1 {
     color: #fff;
     font-size: 3rem;
@@ -42,6 +44,29 @@ li {
     font-size: 1.5rem; 
     margin-top: 1rem;
 }
+
+/* Components */
+/* Nav */
+.nav_head {
+    width: 100%;
+    top: 0;
+    background: var(--colot-accent);
+    padding: 1rem 2rem;
+    /* margin-bottom: rem; */
+    display: flex;
+    position: fixed;
+    /* z-index: 999; */
+
+    
+}
+.nav-logo {
+    width: 5rem;
+    margin: 0 1rem;
+    /* padding-right: 0.5rem; */
+}
+
+
+/* badge */
 .badge{
     border-radius: 20px;
     padding: 0.5rem 1rem;
@@ -55,6 +80,8 @@ li {
     background: var(--colot-accent);
     color: #fff;
 }
+
+/* Remove Btn */
 .remove-icon {
     width: 5rem;
     height: 5rem;
@@ -69,6 +96,8 @@ li {
     box-shadow: 2px 0 1rem saddlebrown;
     transition: 0.3s;
 }
+
+/* Normal btn */
 .btn {
     font-size: 1.5rem;
     font-weight: 600;
@@ -86,19 +115,7 @@ li {
     color: #fff;
 }
 
-.nav_head {
-    width: 100%;
-    top: 0;
-    background: var(--colot-accent);
-    padding: 1rem 2rem;
-    /* margin-bottom: rem; */
-    display: flex;
-    position: fixed;
-    /* z-index: 999; */
-
-    
-}
-
+/* Card */
 .card {
     width: 80%;
     margin: 4rem;
@@ -146,14 +163,6 @@ li {
 .card_badege-position {
     margin-left: 2rem;
 }
-.grid {
-    display: grid;
-}
-.nav-logo {
-    width: 5rem;
-    margin: 0 1rem;
-    /* padding-right: 0.5rem; */
-}
 
 .cart_box {
     width: 100%;
@@ -197,17 +206,8 @@ li {
     margin-top: 5rem;
     padding: 3rem;
 }
-/* 
 
-.li_decorate {
-    list-style: none;
-}
-.cart_head h1 {
-    font-size: 3rem;
-    margin-left: 10rem;
-
-} */
-
+/* Footer */
 .footer {
     margin-top: auto;
     width: 100%;
@@ -225,7 +225,6 @@ li {
 
 /* Grid */ 
 
-
 .grid {
     display: grid;
 }
@@ -235,6 +234,7 @@ li {
 
 
 @media screen and (min-width: 765px) {
+    /* Typography */
     h1 {
         font-size: 2.5rem;
     }
@@ -247,18 +247,16 @@ li {
     p {
         font-size: 1.2rem;
     }
+    /* Badege */
     .badge {
         font-size: 1.2rem;
-    }
-    .remove-icon {
-        width: 2.0rem;
-        height: 2.0rem;
     }
     .badge:hover{
         border-radius: 20px;
         padding: .6rem 2.1rem;
         transition: 0.2s;
     }
+    /* Normal btn */
     .btn {
         font-size: 1.2rem;
         padding: 1.7rem 1.7rem;
@@ -274,6 +272,16 @@ li {
         color: #fff;
         transition: 0.3s;
     }
+    /* Remove Btn */
+    .remove-icon {
+        width: 2.0rem;
+        height: 2.0rem;
+    }
+    .remove-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+    /* Card */
     .card {
         width: 90%;
         
@@ -287,6 +295,8 @@ li {
     .card_badege-position {
         margin-left: 6.5rem;
     }
+    
+    /* Cart Bidy */
     .cart_body {
         margin: 4rem 8rem;
         background: rgb(225, 201, 173);
@@ -300,19 +310,12 @@ li {
     .li_decorate {
         width: 90%;
     }
-    .removeBtn-position {
-        /* margin-top: 1.5rem; */
-        /* margin-left: rem; */
-        /* position: relative; */
-    }
-    .remove-icon {
-        width: 5rem;
-        height: 5rem;
-    }
+    /* Clear btn */
     .clear-btn_position {
         margin-top: 5rem;
         padding: 2.5rem;
     }
+    /* Grid */
     .grid--1x2 {
         grid-template-columns: 2fr 1fr;
     }
@@ -323,7 +326,4 @@ li {
         width: 50%;
         gap: 1rem;
     }
-    /* .card_price {
-        margin: rem;
-    } */
 }
