@@ -14,10 +14,10 @@
    </header>
     <div class="grid grid--1x2">
       <div class="grid grid--1x3 .grid--1x2 card_holdinf-size">
-        <div class="card">
+        <div id="product-one" class="card">
           <div class="card__header">
             <h1>Mobile</h1>
-            <h2>iPhone 15 Pro</h2>
+            <h2 >iPhone 15 Pro</h2>
           </div>
           <div class="card__body">
             <img class="card__img" src="images/iphone15.png" alt="Phone" />
@@ -30,11 +30,10 @@
               <span><h3>Price: $1,250</h2></span>
               <span class="badge badge--color card_badege-position ">20% Off</span>
             </aside>
-      
-            <button class="btn btn--primary">Add to Cart</button>
+            <button id="pro-1-submit" class="btn btn--primary">Add to Cart</button>
           </div>
         </div>
-        <div class="card">
+        <div id="product-two" class="card">
           <div class="card__header">
             <h1>Laptop</h1>
             <h2>MacBook Pro</h2>
@@ -54,7 +53,7 @@
             <button class="btn btn--primary">Add to Cart</button>
           </div>
         </div>
-        <div class="card">
+        <div id="product-three" class="card">
           <div class="card__header">
             <h1>Gaming Console</h1>
             <h2>PlayStation 5</h2>
@@ -74,7 +73,7 @@
             <button class="btn btn--primary">Add to Cart</button>
           </div>
         </div>
-         <div class="card">
+         <div id="product-four" class="card">
           <div class="card__header">
             <h1>Gaming PC</h1>
             <h2>Asus Gaming Reg</h2>
@@ -94,7 +93,7 @@
             <button class="btn btn--primary">Add to Cart</button>
           </div>
         </div>
-        <div class="card">
+        <div id="product-five" class="card">
           <div class="card__header">
             <h1>Graphic Card</h1>
             <h2>Asus RTX 4080 Ti</h2>
@@ -114,7 +113,7 @@
             <button class="btn btn--primary">Add to Cart</button>
           </div>
         </div>
-        <div class="card">
+        <div id="product-six" class="card">
           <div class="card__header">
             <h1>Gaming Chair</h1>
             <h2>No Brand</h2>
@@ -137,8 +136,8 @@
       </div>
       <div class="cart_body ">
         <h1 class="item_list-H">Cart List</h1>
-        <ul class="ul_decorate">
-          <li class="li_decorate grid grid--1x3 grid_li--1x3">
+        <ul id ="cart-list" class="ul_decorate">
+          <!-- <li class="li_decorate grid grid--1x3 grid_li--1x3">
             <img class="li_image" src="images/iphone15.png" alt="photo" />
             <div class="item_info">
               <p>iPhone 15 pro</p>
@@ -189,7 +188,7 @@
                 src="images/delete_icon.png"
                 alt="remove item"
             /></a>
-          </li>
+          </li> -->
         </ul>
         <button class="btn btn--secondary clear-btn_position">Clear List</button>
       </div>

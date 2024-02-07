@@ -5,7 +5,7 @@
 } 
 html {
     font-size: 62.5%;
-    height: 100%;
+    /* height: 100%; */
 }
 body{
     /* background: orange; */
@@ -213,11 +213,13 @@ li {
     width: 100%;
     height: 6rem;
     background: var(--colot-accent);
-    position: relative;
+    /* position: relative; */
+    align-self: ;
 }
 .footer_text {
     padding: 1.5rem 0rem;
     text-align: center;
+
 }
 
 
