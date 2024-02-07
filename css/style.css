@@ -5,7 +5,7 @@
 } 
 html {
     font-size: 62.5%;
-    /* height: 100%; */
+    height: 100%;
 }
 body{
     /* background: orange; */
@@ -118,6 +118,7 @@ li {
 /* Card */
 .card {
     width: 80%;
+    height: fit-content;
     margin: 4rem;
     border-radius: 7px;
     box-shadow: 10px 10px 10px 5px #a29999;
@@ -229,6 +230,7 @@ li {
 
 .grid {
     display: grid;
+    height: fit-content;
 }
 .grid_li--1x3 {
     grid-template-columns: repeat(3, 1fr);
