@@ -1,7 +1,9 @@
 :root {
     --color-primary: #5554CC; 
     --color-secondary: #073269;
-    --colot-accent: #cc5e42; 
+    --color-card-head: #13afad; 
+    --color-accent: #cc5e42;
+    --color-HeaderFooter: #08d3d0; 
 } 
 html {
     font-size: 62.5%;
@@ -40,7 +42,7 @@ p{
     margin-top: 1rem;
 }
 li { 
-    color: var(--colot-accent);
+    color: var(--color-accent);
     font-size: 1.5rem; 
     margin-top: 1rem;
 }
@@ -50,7 +52,7 @@ li {
 .nav_head {
     width: 100%;
     top: 0;
-    background: var(--colot-accent);
+    background: var(--color-HeaderFooter);
     padding: 1rem 2rem;
     /* margin-bottom: rem; */
     display: flex;
@@ -58,6 +60,10 @@ li {
     /* z-index: 999; */
 
     
+}
+.nav-header {
+    padding: 1rem 0rem;
+    font-size: 1.8rem;
 }
 .nav-logo {
     width: 5rem;
@@ -77,7 +83,7 @@ li {
 }
 
 .badge--color {
-    background: var(--colot-accent);
+    background: var(--color-accent);
     color: #fff;
 }
 
@@ -85,6 +91,7 @@ li {
 .remove-icon {
     width: 5rem;
     height: 5rem;
+    margin: 2rem 2rem;
 }
 .removeBtn-position {
     margin-top: 1.5rem;
@@ -93,7 +100,7 @@ li {
 .remove-icon:hover {
     /* background: rgb(29, 80, 33); */
     border-radius: 100%;
-    box-shadow: 2px 0 1rem saddlebrown;
+    box-shadow: 2px 0 1rem rgb(0, 0, 0);
     transition: 0.3s;
 }
 
@@ -102,7 +109,7 @@ li {
     font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 2rem 2rem;
+    padding: 2rem 7.2rem;
     border: 0;
     border-radius: 25px;
 }
@@ -114,6 +121,16 @@ li {
     background: var(--color-secondary);
     color: #fff;
 }
+/* .btn--primary:hover {
+    background: var(--color-accent);
+    color: #fff;
+    transition: 0.3s;
+}
+.btn--secondary:hover {
+    background: red;
+    color: #fff;
+    transition: 0.3s;
+} */
 
 /* Card */
 .card {
@@ -135,12 +152,11 @@ li {
     color: #f3f3f3;
 }
 .card__header {
-    background: var(--colot-accent);
+    background: var(--color-card-head);
 }
 .card__body {
-    background: rgba(225, 201, 173, 0.645);
+    background: rgb(208, 247, 240);
     display: flex;
-    /* opacity: 50%; */
     flex-direction: column;
 }
 .card__img {
@@ -173,13 +189,14 @@ li {
     width: 100%;
 }
 .cart_body {
-    background: rgb(255, 255, 255);
+    background: rgb(208, 247, 240);
    
     padding: 2rem 3rem;
 }
 .ul_decorate {
     margin: 0rem;
     padding: 0rem;
+    
 }
 .li_decorate {
     width: 90%;
@@ -187,10 +204,11 @@ li {
     margin-left: 1rem;
     padding: 1rem 1rem;
     border-radius: 12px;
-    background: #a29999;
+    background: #7ccfde;
     list-style: none;
     display: flex;
     flex-direction: row;
+
 }
 .cart_head h1 {
     font-size: 2.5rem;
@@ -201,7 +219,7 @@ li {
     width: 8rem;
 }
 .item_list-H{
-    color: var(--colot-accent);
+    color: var(--color-secondary);
 }
 .clear-btn_position {
     margin-top: 5rem;
@@ -213,9 +231,8 @@ li {
     margin-top: auto;
     width: 100%;
     height: 6rem;
-    background: var(--colot-accent);
-    /* position: relative; */
-    align-self: ;
+    background: var(--color-HeaderFooter);
+    
 }
 .footer_text {
     padding: 1.5rem 0rem;
@@ -224,13 +241,12 @@ li {
 }
 
 
-
-
 /* Grid */ 
 
 .grid {
     display: grid;
     height: fit-content;
+    /* transition: 0.5s; */
 }
 .grid_li--1x3 {
     grid-template-columns: repeat(3, 1fr);
@@ -251,6 +267,11 @@ li {
     p {
         font-size: 1.2rem;
     }
+    /* Nav */
+    .nav-header {
+        padding: 1rem 0rem;
+        font-size: 2.8rem;
+    }
     /* Badege */
     .badge {
         font-size: 1.2rem;
@@ -263,11 +284,11 @@ li {
     /* Normal btn */
     .btn {
         font-size: 1.2rem;
-        padding: 1.7rem 1.7rem;
+        padding: 1.7rem 10rem;
 
     }
     .btn--primary:hover {
-        background: var(--colot-accent);
+        background: var(--color-accent);
         color: #fff;
         transition: 0.3s;
     }
@@ -284,6 +305,14 @@ li {
     .remove-icon {
         width: 5rem;
         height: 5rem;
+    }
+    .remove-icon:hover {
+        /* background: rgb(29, 80, 33); */
+        border-radius: 100%;
+        /* width: 4rem;
+        height: 4rem; */
+        box-shadow: 2px 0 1rem rgb(0, 0, 0);
+        transition: 0.3s;
     }
     /* Card */
     .card {
@@ -303,16 +332,18 @@ li {
     /* Cart Bidy */
     .cart_body {
         margin: 4rem 8rem;
-        background: rgb(225, 201, 173);
+        background: rgb(208, 247, 240);
         width: 65%;
         height: fit-content;
         padding: 2rem 3rem;
-        box-shadow: 0px 20px 20px 10px rgb(215, 200, 189);
+        box-shadow: 0px 20px 20px 10px rgb(208, 247, 240);
         border-radius: 12.5px;
+        
         
     }
     .li_decorate {
         width: 90%;
+       
     }
     /* Clear btn */
     .clear-btn_position {

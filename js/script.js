@@ -28,23 +28,21 @@
 
 
 
-document.querySelector('#product-one').getElementsByTagName('button')[0].addEventListener('click', value => getData('one'));
-document.querySelector('#product-two').getElementsByTagName('button')[0].addEventListener('click', value => getData('two'));
-document.querySelector('#product-three').getElementsByTagName('button')[0].addEventListener('click', value => getData('three'));
-document.querySelector('#product-four').getElementsByTagName('button')[0].addEventListener('click', value => getData('four'));
-document.querySelector('#product-five').getElementsByTagName('button')[0].addEventListener('click', value => getData('five'));
-document.querySelector('#product-six').getElementsByTagName('button')[0].addEventListener('click', value => getData('six'));
 
+//// Class Function
+
+// Create Item
 class Item {
-    constructor(name, image) {
+    constructor(name, image, uniValu) {
         this.name = name;
         this.image= image;
+        this.uniValu= uniValu;
     }
 }
 
+// Adding or deleting Cart item
 class Cart{
     static addItem(item) {
-        // console.log(item.name,item.image);
         let cartItem = document.getElementById('cart-list');
         let items= document.createElement('li');
         items.className = "li_decorate grid grid--1x3 grid_li--1x3";
@@ -54,17 +52,77 @@ class Cart{
               <p>${item.name}</p>
               <p>Quantity:1</p>
             </div>
-            <a class="removeBtn-position" href="#"
-              ><img
+            <img
+                id ="${item.uniValu}"
                 class="remove-icon"
                 src="images/delete_icon.png"
+                srcset=""
                 alt="remove item"
-            /></a>
+            />
         `;
         cartItem.appendChild(items);
     }
+    static deletefromList(target) {
+        if(target.hasAttribute('srcset')){
+            target.parentElement.remove();
+            SaveData.removeItem(target.id);
+        
+    } 
+}}
+
+// Save or Delete From Local Storage
+
+class SaveData {
+    static getCartItem() {
+        let cartItems;
+        if(localStorage.getItem('cartItems') === null) {
+            cartItems = [];
+        } else {
+            cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        }
+        return cartItems;
+    }
+
+    static addCartItem(item) {
+        let cartItems = SaveData.getCartItem();
+        cartItems.push(item);
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+    static displayCardItem() {
+        let cartItems = SaveData.getCartItem();
+
+        cartItems.forEach( item =>
+            Cart.addItem(item));
+    }
+    static removeItem(id) {
+        let cartItems = SaveData.getCartItem();
+
+        cartItems.forEach((item, index) => {
+            if(parseInt(item.uniValu) === parseInt(id)) {
+                cartItems.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    }
 }
 
+
+
+// Event Listeners
+document.querySelector('#product-one').getElementsByTagName('button')[0].addEventListener('click', value => getData('one'));
+document.querySelector('#product-two').getElementsByTagName('button')[0].addEventListener('click', value => getData('two'));
+document.querySelector('#product-three').getElementsByTagName('button')[0].addEventListener('click', value => getData('three'));
+document.querySelector('#product-four').getElementsByTagName('button')[0].addEventListener('click', value => getData('four'));
+document.querySelector('#product-five').getElementsByTagName('button')[0].addEventListener('click', value => getData('five'));
+document.querySelector('#product-six').getElementsByTagName('button')[0].addEventListener('click', value => getData('six'));
+document.querySelector('#clear-btn').addEventListener('click', clearList);
+document.querySelector('#cart-list').addEventListener('click', removeItem);
+document.addEventListener('DOMContentLoaded', SaveData.displayCardItem);
+
+// Functions
 
 function getData(value) {
 
@@ -74,11 +132,25 @@ function getData(value) {
 
     let image =document.querySelector(`#product-${value}`).
     getElementsByClassName('card__img')[0].src;
-   
-    let item = new Item(name,image);
-    // let cart = new Cart();
+    
+    let uniValu = parseInt(Math.random()*1000);
+
+    let item = new Item(name,image,uniValu);
+
 
     Cart.addItem(item);
-    // console.log(item);    
+
+    SaveData.addCartItem(item);
+  
 }
 
+function clearList() {
+    let cartItem = document.getElementById('cart-list');
+    cartItem.innerHTML =``;
+    localStorage.clear();
+}
+
+function removeItem(value) {
+    Cart.deletefromList(value.target);
+
+}
