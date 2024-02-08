@@ -6,8 +6,9 @@
     --color-HeaderFooter: #08d3d0; 
 } 
 html {
-    font-size: 62.5%;
-    height: 100%;
+    font-size: 50.5%;
+    /* height: 100%; */
+    height: fit-content;
 }
 body{
     /* background: orange; */
@@ -70,7 +71,22 @@ li {
     margin: 0 1rem;
     /* padding-right: 0.5rem; */
 }
-
+.nav-cart-btn {
+    background: var(--color-card-head);
+    text-decoration: none;
+    font-weight:600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    /* border: 5px red */
+    padding: 2rem 1.5rem;
+    border-radius: 12.5px;
+    font-size: 1.5rem;
+    margin-left: 8rem;
+}
+.nav-cart-btn:hover {
+    box-shadow: 0px 5px 5px 0px rgb(46, 187, 171);
+    transition: .01s;
+}
 
 /* badge */
 .badge{
@@ -112,6 +128,7 @@ li {
     padding: 2rem 7.2rem;
     border: 0;
     border-radius: 25px;
+    text-wrap: nowrap;
 }
 .btn--primary {
     background: var(--color-primary);
@@ -121,22 +138,23 @@ li {
     background: var(--color-secondary);
     color: #fff;
 }
-/* .btn--primary:hover {
+
+.btn--primary:hover {
     background: var(--color-accent);
     color: #fff;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 .btn--secondary:hover {
     background: red;
     color: #fff;
-    transition: 0.3s;
-} */
+    /* transition: 0.3s; */
+}
 
 /* Card */
 .card {
     width: 80%;
     height: fit-content;
-    margin: 4rem;
+    margin: 5rem;
     border-radius: 7px;
     box-shadow: 10px 10px 10px 5px #a29999;
 }
@@ -271,6 +289,9 @@ li {
     .nav-header {
         padding: 1rem 0rem;
         font-size: 2.8rem;
+    }
+    .nav-cart-btn {
+        display: none;
     }
     /* Badege */
     .badge {

@@ -33,7 +33,8 @@
 
 // Create Item
 class Item {
-    constructor(name, image, uniValu) {
+    constructor(catagory, name, image, uniValu) {
+        this.catagory = catagory;
         this.name = name;
         this.image= image;
         this.uniValu= uniValu;
@@ -45,7 +46,7 @@ class Cart{
     static addItem(item) {
         let cartItem = document.getElementById('cart-list');
         let items= document.createElement('li');
-        items.className = "li_decorate grid grid--1x3 grid_li--1x3";
+        items.className = `li_decorate grid grid--1x3 grid_li--1x3 ${item.catagory}`;
         items.innerHTML = `
         <img class="li_image" src="${item.image}" alt="photo" />
             <div class="item_info">
@@ -91,9 +92,9 @@ class SaveData {
     }
     static displayCardItem() {
         let cartItems = SaveData.getCartItem();
-
-        cartItems.forEach( item =>
-            Cart.addItem(item));
+        cartItems.forEach( item => {
+             Cart.addItem(item);  
+        });
     }
     static removeItem(id) {
         let cartItems = SaveData.getCartItem();
@@ -122,9 +123,17 @@ document.querySelector('#clear-btn').addEventListener('click', clearList);
 document.querySelector('#cart-list').addEventListener('click', removeItem);
 document.addEventListener('DOMContentLoaded', SaveData.displayCardItem);
 
-// Functions
+// Functions 
+
+// function checkData(value) { // Further work will  be done
+//         getData(value);
+//     }
+
 
 function getData(value) {
+    let catagory = document.querySelector(`#product-${value}`).
+    getElementsByClassName('card__header')[0].
+    getElementsByTagName('h1')[0].innerText;
 
     let name = document.querySelector(`#product-${value}`).
     getElementsByClassName('card__header')[0].
@@ -135,7 +144,7 @@ function getData(value) {
     
     let uniValu = parseInt(Math.random()*1000);
 
-    let item = new Item(name,image,uniValu);
+    let item = new Item(catagory, name,image, uniValu);
 
 
     Cart.addItem(item);
